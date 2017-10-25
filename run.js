@@ -17,9 +17,14 @@ capitalCityDeck.addCard("What is the capital of California?", "Sacramento");
 
 catalog.push(sportsDeck, capitalCityDeck);
 
-var controller = new CliController("masterController", catalog);
+var controller = new CliController("controller", catalog);
+
+controller.selectDeck().then(controller.assignDeck)
+	.then(controller.actionQuestion);
 
 
-controller.selectDeck();
-console.log(controller.selection);
+
+
+
+
 
